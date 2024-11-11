@@ -5,7 +5,7 @@ on:
       environment-name:
         type: environment
         default: dev
-        required: true
+        required: false
         description: select environment
 
 jobs:
