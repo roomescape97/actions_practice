@@ -16,8 +16,7 @@ jobs:
       USERNAME: ${{vars.USERNAME}}
       PASSWORD: ${{secrets.PASSWORD}}
     steps:
-      - uses: actions/checkout@v4
       -  run: 
-          echo "${{USERNAME}}"
+          echo "${USERNAME}"
       -  run: 
-          echo "${{USERNAME}}"
+          echo "${PASSWORD:0:1} ${PASSWORD#?}"
