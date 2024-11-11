@@ -1,4 +1,4 @@
-name: CI
+name: 5_7_environments_action
 on:
   workflow_dispatch:
     inputs:
