@@ -2,7 +2,7 @@ name: 5_8_1_Cache_Action
 on: push
 jobs:
   cache:
-    runs-on:ubuntu-lastest
+    runs-on: ubuntu-lastest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v4
@@ -10,9 +10,9 @@ jobs:
           key: test-${{ runner.os }}-${{github.sha}}
           path: ${{github.workspace}}/dummy
           restore-key: test-${{runner.os}}-
-      - run:
-        if [[ -f "${GITHUB_WORKSPACE}/dummy"]]; then exit 0; fi
-        dd if=/dev/urandom of "${GITHUB_WORKSPACE}/dummy" bs=1M count=10
+      - run: 
+        if [[ -f "${GITHUB_WORKSPACE}/dummy" ]]; then exit 0; fi
+        dd if=/dev/urandom of="${GITHUB_WORKSPACE}/dummy" bs=1M count=10
         sleep 30
       - run:
         ls -lh "${GITHUB_WORKSPACE}/dummy"
